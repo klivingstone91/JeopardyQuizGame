@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="topdiv">
+        <h1>Jeopardy</h1>
+    </div>
+    <table>
+        <tr>
+            <td class="cat">Delish</td>
+            <td class="cat">Pets</td>
+            <td class="cat">Metropolis</td>
+            <td class="cat">Stylish</td>
+            <td class="cat">Science</td>
+            <td class="cat">Movies</td>
+            <td class="cat">Space</td>
+            <td class="cat">TV</td>
+            <td class="cat">Geography</td>
+            <td class="cat">History</td>
+        </tr>
+        <tr>
+            <td onclick="myFunction(this.id)" id="100-1">100</td>
+            <td onclick="myFunction(this.id)" id="100-2">100</td>
+            <td onclick="myFunction(this.id)" id="100-3">100</td>
+            <td onclick="myFunction(this.id)" id="100-4">100</td>
+            <td onclick="myFunction(this.id)" id="100-5">100</td>
+            <td onclick="myFunction(this.id)" id="100-6">100</td>
+            <td onclick="myFunction(this.id)" id="100-7">100</td>
+            <td onclick="myFunction(this.id)" id="100-8">100</td>
+            <td onclick="myFunction(this.id)" id="100-9">100</td>
+            <td onclick="myFunction(this.id)" id="100-10">100</td>
+        </tr>
+        <tr>
+            <td onclick="myFunction(this.id)" id="200-1">200</td>
+            <td onclick="myFunction(this.id)" id="200-2">200</td>
+            <td onclick="myFunction(this.id)" id="200-3">200</td>
+            <td onclick="myFunction(this.id)" id="200-4">200</td>
+            <td onclick="myFunction(this.id)" id="200-5">200</td>
+            <td onclick="myFunction(this.id)" id="200-6">200</td>
+            <td onclick="myFunction(this.id)" id="200-7">200</td>
+            <td onclick="myFunction(this.id)" id="200-8">200</td>
+            <td onclick="myFunction(this.id)" id="200-9">200</td>
+            <td onclick="myFunction(this.id)" id="200-10">200</td>
+            
+        </tr>
+        <tr>
+            <td onclick="myFunction(this.id)" id="300-1">300</td>
+            <td onclick="myFunction(this.id)" id="300-2">300</td>
+            <td onclick="myFunction(this.id)" id="300-3">300</td>
+            <td onclick="myFunction(this.id)" id="300-4">300</td>
+            <td onclick="myFunction(this.id)" id="300-5">300</td>
+            <td onclick="myFunction(this.id)" id="300-6">300</td>
+            <td onclick="myFunction(this.id)" id="300-7">300</td>
+            <td onclick="myFunction(this.id)" id="300-8">300</td>
+            <td onclick="myFunction(this.id)" id="300-9">300</td>
+            <td onclick="myFunction(this.id)" id="300-10">300</td>
+            
+        </tr>
+        <tr>
+            <td onclick="myFunction(this.id)" id="400-1">400</td>
+            <td onclick="myFunction(this.id)" id="400-2">400</td>
+            <td onclick="myFunction(this.id)" id="400-3">400</td>
+            <td onclick="myFunction(this.id)" id="400-4">400</td>
+            <td onclick="myFunction(this.id)" id="400-5">400</td>
+            <td onclick="myFunction(this.id)" id="400-6">400</td>
+            <td onclick="myFunction(this.id)" id="400-7">400</td>
+            <td onclick="myFunction(this.id)" id="400-8">400</td>
+            <td onclick="myFunction(this.id)" id="400-9">400</td>
+            <td onclick="myFunction(this.id)" id="400-10">400</td>
+        </tr>
+        <tr>
+            <td onclick="myFunction(this.id)" id="500-1">500</td>
+            <td onclick="myFunction(this.id)" id="500-2">500</td>
+            <td onclick="myFunction(this.id)" id="500-3">500</td>
+            <td onclick="myFunction(this.id)" id="500-4">500</td>
+            <td onclick="myFunction(this.id)" id="500-5">500</td>
+            <td onclick="myFunction(this.id)" id="500-6">500</td>
+            <td onclick="myFunction(this.id)" id="500-7">500</td>
+            <td onclick="myFunction(this.id)" id="500-8">500</td>
+            <td onclick="myFunction(this.id)" id="500-9">500</td>
+            <td onclick="myFunction(this.id)" id="500-10">500</td>
+            
+        </tr>
+    </table>
+    <div id="myModal" class="modal">   
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="flex-container">
+                <div  >
+                    <p id="theQuestion">
+                        
+                    </p>
+                </div>
+                <div id="answer" onclick="revealAnswer()"><p id="answer2">2</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function revealAnswer() {
+            document.getElementById("answer2").style.color = "black";
+        }
+        function myFunction(clicked) {
+            var x = document.getElementById(clicked);
+            var xId = document.getElementById(clicked).id;
+            //alert("you clicked " + xId);
+            x.style.background = "red";
+            x.innerHTML = "Answered";
+            modalOpen(xId);
+            //questions(xId);
+        }
+
+        function questions(choice){
+            
+            switch (choice) {
+                case "100-1":
+                    document.getElementById("theQuestion").innerHTML = "\"Only the crumbliest, flakiest Chocolate.\" Name the chocolate bar. ";
+                    document.getElementById("answer2").innerHTML = "Flake";
+                    break;
+                case "200-1":
+                    document.getElementById("theQuestion").innerHTML = "What pastry is used to make Baklava?";
+                    document.getElementById("answer2").innerHTML = "Filo";
+                    break;
+                case "300-1":
+                document.getElementById("theQuestion").innerHTML = "What is the most expensive spice by weight?";
+                    document.getElementById("answer2").innerHTML = "Saffron";
+                     break;
+                case "400-1":
+                    document.getElementById("theQuestion").innerHTML = "Which fruit has varieties including tommy atkins, haden, kent, keitt, ataulfo and francis?"; 
+                    document.getElementById("answer2").innerHTML = "Mango";
+               
+                    break;
+                case "500-1":
+                document.getElementById("theQuestion").innerHTML = "how many cups of tea are drunk on average in the UK everyday?";
+                    document.getElementById("answer2").innerHTML = "165 million";
+                
+                    break;
+                case "100-2":
+                   //alert("switch"); 
+                    document.getElementById("theQuestion").innerHTML = "What is the worlds biggest dog by height?";
+                    document.getElementById("answer2").innerHTML = "Great Dane";
+                    break;
+                case "200-2":
+                    document.getElementById("theQuestion").innerHTML = "what type of pet was \'Blue Peter\'s\' George who caused a stir when he went missing in 1988?'";
+                    document.getElementById("answer2").innerHTML = "Tortoise";
+                
+                    break;
+                case "300-2":
+                    document.getElementById("theQuestion").innerHTML = "What is the collective noun for a group of cats?";
+                    document.getElementById("answer2").innerHTML = "Clowder";
+                
+                    break;
+                case "400-2":
+                document.getElementById("theQuestion").innerHTML = "Pogona is a genus of reptiles containing several species often known by this common name?";
+                    document.getElementById("answer2").innerHTML = "Bearded Dragon";
+               
+                    break;
+                case "500-2":
+                document.getElementById("theQuestion").innerHTML = "What is the name of the parent dogs in 101 Dalmations?";
+                    document.getElementById("answer2").innerHTML = "Pongo'\(Male\) and Perdita\(Female\)";
+               
+                    break;
+                case "100-3":
+                   //alert("switch"); 
+                    document.getElementById("theQuestion").innerHTML = "What is the World\'s largest city?" ;
+                    document.getElementById("answer2").innerHTML = "Tokyo";
+
+                    break;
+                case "200-3":
+                    document.getElementById("theQuestion").innerHTML = "What city was the first city to have traffic lights? \(European\) " ;
+                    document.getElementById("answer2").innerHTML = "Berlin";
+                
+                    break;
+                case "300-3":
+                     document.getElementById("theQuestion").innerHTML = "Which city has the largest amount of skyscrapers(over 150m)?" ;
+                    document.getElementById("answer2").innerHTML = "Hong Kong";
+               
+               
+                    break;
+                case "400-3":
+                   document.getElementById("theQuestion").innerHTML = "London has the oldest metro, Glasgow has the third. What is the second?" ;
+                    document.getElementById("answer2").innerHTML = "Budapest";
+                    break;
+                case "500-3":
+                    
+               document.getElementById("theQuestion").innerHTML = "What is the most densely populated city in the world?" ;
+                    document.getElementById("answer2").innerHTML = "Manila";
+                    break;
+                case "100-4":
+                document.getElementById("theQuestion").innerHTML = "What design house designed Kate Middletons wedding dress?";
+                    document.getElementById("answer2").innerHTML = "Alexander Mcqueen";
+                
+                    break;
+                case "200-4":
+                document.getElementById("theQuestion").innerHTML = "What is the name of the two magazines in 13 going on 30 called? ";
+                    document.getElementById("answer2").innerHTML = "Poise and Sparkle";
+                
+                    break;
+                case "300-4":
+                document.getElementById("theQuestion").innerHTML = "Fashion retailer H&M was founed in which European country?";
+                    document.getElementById("answer2").innerHTML = "Sweden";
+                
+                    break; 
+                case "400-4":
+                document.getElementById("theQuestion").innerHTML = "In the 1990s which supermodel famously fell over on the catwalk while wearing a pair of Vivienne Westwood shoes?";
+                    document.getElementById("answer2").innerHTML = "Naomi Campbell";
+               
+                    break;
+                case "500-4":
+                document.getElementById("theQuestion").innerHTML = "Who designed Victoria Beckhams wedding dress?";
+                    document.getElementById("answer2").innerHTML = "Vivienne Westwood"; 
+                
+                    break;
+                case "100-5":
+                    document.getElementById("theQuestion").innerHTML = "What is a common name for Nitrous Oxide?";
+                    document.getElementById("answer2").innerHTML = "Laughing Gas"; 
+                    break;
+                case "200-5":
+                document.getElementById("theQuestion").innerHTML = "Is rainwater slightly acid or slightly Alkaline?";
+                    document.getElementById("answer2").innerHTML = "Slightly acidic"; 
+                
+                    break;
+                case "300-5":
+                document.getElementById("theQuestion").innerHTML = "What is the name of the tube connects the Kidney to the bladder?";
+                    document.getElementById("answer2").innerHTML = "Ureter"; 
+               
+                    break;
+                case "400-5":
+                document.getElementById("theQuestion").innerHTML = "What is the scientific name for the kneecap?";
+                    document.getElementById("answer2").innerHTML = "patella"; 
+                
+                    break;
+                case "500-5":
+                document.getElementById("theQuestion").innerHTML = "Which of the following Geological eras came first, Mesozoic, paleozoic or cenozoic?";
+                    document.getElementById("answer2").innerHTML = "paleozoic";
+                
+                    break;
+                case "100-6":
+                    document.getElementById("theQuestion").innerHTML = "What was the name of Tom Cruise\'s Character in Top Gun?";
+                    document.getElementById("answer2").innerHTML = "Maverick";
+              
+                    break;
+                case "200-6":
+                document.getElementById("theQuestion").innerHTML = "Who plays the main character in Black Panther?";
+                    document.getElementById("answer2").innerHTML = "Chadwick Boseman";                
+                    break;
+                case "300-6":
+                    document.getElementById("theQuestion").innerHTML = "In dirty Dancing what is Baby\'s First name?";
+                    document.getElementById("answer2").innerHTML = "Frances";
+               
+                    break;
+                case "400-6":
+                document.getElementById("theQuestion").innerHTML = "What is the name of the accident-prone Ant who is the main Character in A Bug\'s life?'";
+                    document.getElementById("answer2").innerHTML = "Flik";
+               
+                    break;
+                case "500-6":
+                document.getElementById("theQuestion").innerHTML = "What is the name of the second James Bond film?";
+                    document.getElementById("answer2").innerHTML = "From Russia With Love";
+                
+                    break;
+                case "100-7":
+                document.getElementById("theQuestion").innerHTML = "Who was the first person to reach space?";
+                    document.getElementById("answer2").innerHTML = "Yuri Gagarin"; 
+                
+                    break;
+                case "200-7":
+                document.getElementById("theQuestion").innerHTML = "How many planets are in the solar system?";
+                    document.getElementById("answer2").innerHTML = "8 planets";
+                
+                    break;
+                case "300-7":
+                document.getElementById("theQuestion").innerHTML = "Which NASA space flight was the last manned mission to the moon?";
+                    document.getElementById("answer2").innerHTML = "Apollo 17";
+                
+                    break;
+                case "400-7":
+                document.getElementById("theQuestion").innerHTML = "How many moons does Jupiter have?";
+                    document.getElementById("answer2").innerHTML = "67"; 
+              
+                    break;
+                case "500-7":
+                document.getElementById("theQuestion").innerHTML = "What is the closest star to the Sun?";
+                    document.getElementById("answer2").innerHTML = "Proxima Centauri";
+               
+                    break;
+                case "100-8":
+                document.getElementById("theQuestion").innerHTML = "What is David Schwimmer\'s chacacter in Friends called'";
+                    document.getElementById("answer2").innerHTML = "Ross Geller";
+               
+                    break;
+                case "200-8":
+                document.getElementById("theQuestion").innerHTML = "Who is the host of Quiz show Tipping Point?";
+                    document.getElementById("answer2").innerHTML = "Ben Shepard";
+               
+                    break;
+                case "300-8":
+                document.getElementById("theQuestion").innerHTML = "What is the Starship Enterprise\'s Registry number?'";
+                    document.getElementById("answer2").innerHTML = "NCC-1701";
+               
+                    break;
+                case "400-8":
+                document.getElementById("theQuestion").innerHTML = "In which English seaside town was faulty towers set?";
+                    document.getElementById("answer2").innerHTML = "Torquay";
+               
+                    break;
+                
+                case "500-8":
+                document.getElementById("theQuestion").innerHTML = "what is the name of the prison in the popular BBC sitcom Porridge starring Ronnie Barker?";
+                    document.getElementById("answer2").innerHTML = "HMP Slade";
+               
+                    break;
+                case "100-9":
+                document.getElementById("theQuestion").innerHTML = "In which Scandinavian country would you find fjords?";
+                    document.getElementById("answer2").innerHTML = "Norway";
+                    
+                
+                    break;
+                case "200-9":
+                document.getElementById("theQuestion").innerHTML = "Which Lake holds by far the largest volume of water in the UK?";
+                    document.getElementById("answer2").innerHTML = "Loch Ness"; 
+                
+                    break;
+                case "300-9":
+                document.getElementById("theQuestion").innerHTML = "What is the oldest recorded town in the UK?";
+                    document.getElementById("answer2").innerHTML = "Colchester";
+               
+                    break;
+                case "400-9":
+                document.getElementById("theQuestion").innerHTML = "Baku is the capital city of what Eastern European country?";
+                    document.getElementById("answer2").innerHTML = "Azerbaijan";
+             
+                    break;
+                case "500-9":
+                document.getElementById("theQuestion").innerHTML = "PEK is the code for which airport?";
+                    document.getElementById("answer2").innerHTML = "Beijing";
+                
+                    break;
+
+                case "100-10":
+                document.getElementById("theQuestion").innerHTML = "Who was the second President of the United States?";
+                    document.getElementById("answer2").innerHTML = "John Adams"; 
+                
+                    break;
+     
+                case "200-10":
+                document.getElementById("theQuestion").innerHTML = "Who discovered penicillin?";
+                    document.getElementById("answer2").innerHTML = "Alexander Fleming";
+               
+                    break;
+               
+                case "300-10":
+                document.getElementById("theQuestion").innerHTML = "What was the name of the South african war fought between 1899 and 1902?";
+                    document.getElementById("answer2").innerHTML = "\(second\)Boer War";
+                
+                    break;
+               
+                case "400-10":
+                document.getElementById("theQuestion").innerHTML = "What did the Romans call Scotland?";
+                    document.getElementById("answer2").innerHTML = "Caledonia";
+                
+                    break;
+                
+                
+                case "500-10":
+                document.getElementById("theQuestion").innerHTML = "Who is the only british Prime Minister to be Assassinated?";
+                    document.getElementById("answer2").innerHTML = "Spencer Perceval";
+                
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+
+        function modalOpen(theBtn){
+            //alert("Modal entered from button " + theBtn );
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById(theBtn);
+            var span = document.getElementsByClassName("close")[0];
+            
+            modal.style.display = "block";
+            console.log("entered modal click, btn info recieved as " + theBtn );
+            questions(theBtn);
+            
+            span.onclick = function() {
+                modal.style.display = "none";
+                console.log("exitted modal 1");
+                document.getElementById("answer2").style.color = "cadetblue";
+            }
+            window.onclick = function(event){
+                if(event.target == modal){
+                    modal.style.display = "none";
+                    console.log("exitted modal 2");
+                    document.getElementById("answer2").style.color = "cadetblue";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
