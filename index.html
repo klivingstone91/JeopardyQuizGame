@@ -100,9 +100,15 @@
             </div>
         </div>
     </div>
+    <button id="testQuiz" onclick="test()"></button>
 
     <script>
 
+        function test() {
+            console.log("in test");
+            data = require('C:/wamp64/www/JeopardyGame/JeopardyQuizGame/theQuizes/testQuiz.JSON');
+            console.log(data);
+          }
         function revealAnswer() {
             document.getElementById("answer2").style.color = "black";
         }
